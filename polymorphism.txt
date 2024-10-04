@@ -1,0 +1,33 @@
+======================Polymorphism=========================
+* Polymorphism : decribes the ability of an object to have
+  multiple forms, that means we can have two or more objects
+  that inherit from the same base class those objects can have  
+  the method that has the same name but different implementation
+  meaning different behavior
+* means many forms and it occurs when we have many classes that
+  are related to each other by inheritance. 
+
+* the Polymorphism requires references or pointers
+ if we didn't pass by reference then we're going to go back
+ to using static binding even though this is virtual
+
+========================( Virtual Member Functions)======================
+    binding == liasons
+* virtual = dynamic binding = overriding
+*           static binding = redefining
+======> How Dynamic Binding Works in C++
+* you must declare a function as virtual in the bse class
+* A base class pointer or reference nust be used to call the function
+* Ar runtime c++ determines the actual object type (derived class) and  
+  calls the appropriate overrideen function.
+
+=======================(Virtual Destructors)========================
+* the Destructors virtual to make sure that it's called when we're
+  using inheritance based Polymorphism or in other words when we're
+  creating a base pointer and instantiating it as some other derived 
+  class type
+
+=========================(Understanding the vtable)=================
+* anytime we use the vitual keyword a virtual table is being created 
+* when we call a member function, the vtbl points us to the 
+  correct member function
