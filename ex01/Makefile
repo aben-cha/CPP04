@@ -1,7 +1,7 @@
-NAME= polymorphism
+NAME= brain
 CPP= c++
 CFLAGS= -Wall -Wextra -Werror
-SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJ= $(SRC:%.cpp=%.o)
 
 all: $(NAME)

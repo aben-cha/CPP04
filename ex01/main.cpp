@@ -6,37 +6,34 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:50:03 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 15:29:22 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/06 17:45:20 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
+
+
+// delete it 
+void s() {
+    system("leaks brain");
+}
 
 int main()
 {
-    const Animal* meta = new Animal();
+    // atexit(s);
+    
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-
-    delete meta;
     delete j;
     delete i;
-    // ...
-    std::cout << std::endl << "       Wrong Animal Implementation : "<< std::endl;
-    const WrongAnimal* pig = new WrongAnimal();
-    const WrongAnimal* cat = new WrongCat();
-    pig->makeSound();
-    cat->makeSound();
-    delete pig;
-    delete cat;
+    
+    Animal* animals[5];
+    creatAnimals(animals, 5);
+
+    Dog dog;
+    testCopies(dog);
     return 0;
 }
