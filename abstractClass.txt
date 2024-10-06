@@ -1,0 +1,20 @@
+=========================(Abstract class)===========================
+* you cannot create an instance of an abstract class base class, 
+  but you can create other classes that are derived from it 
+* when a class has a pure virtual function as amember it becomes an 
+  abstract base class
+
+* base-class -- abstract
+* contain at least one >= pure virtual function
+* only exist to be derived from
+  
+
+
+
+
+
+
+
+=========================(Pure virtual functions)===========================
+* is a virtual member function that belongs to a base class and needs to be
+  redefined in derived classes
