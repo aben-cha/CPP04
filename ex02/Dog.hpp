@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:06:17 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 20:20:31 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/07 14:08:41 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,11 @@ class Dog : public Animal{
     public:
         Dog();
         Dog(const std::string& _type);
-        Dog(Brain* _brain);
         Dog(const Dog& copy);
         Dog& operator=(const Dog& rhs);
         ~Dog();
         void makeSound() const ;
-        std::string getType() const;
         std::string getBrainIdea(int index);
-        void setBrainIdea(int index, std::string str);
         
 };
 

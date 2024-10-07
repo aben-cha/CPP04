@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 14:52:54 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 14:32:40 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/07 14:41:18 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/07 15:03:56 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
-#include <iostream>
-#include <string>
+#include "AMateria.hpp"
 
-class Brain{
-    private:
-        std::string ideas[100];
+class Cure : public AMateria {
     public:
-        Brain();
-        Brain(const Brain& copy);
-        Brain& operator=(const Brain& rhs);
-        ~Brain();
-        void setIdea(int index, std::string str);
-        std::string getIdea(int index);
+        Cure();
+        Cure(const Cure& copy);
+        Cure& operator=(const Cure& rhs);
+        ~Cure();
+        AMateria* clone() const;
 };
-
 
 #endif

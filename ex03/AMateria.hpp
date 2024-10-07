@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 18:51:58 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 14:30:42 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/07 11:16:19 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/07 16:28:26 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
+#include "ICharacter.hpp"
 
-class Animal{
+class AMateria {
     protected:
         std::string type;
+        // ICharacter* target;
     public:
-        Animal();
-        Animal(const std::string& _type);
-        Animal(const Animal& copy);
-        Animal& operator=(const Animal& rhs);
-        std::string getType() const;
-        virtual void makeSound() const = 0;
-        virtual ~Animal() = 0;
+        AMateria();
+        AMateria(const AMateria& copy);
+        AMateria& operator=(const AMateria& rhs);
+        virtual ~AMateria();
+
+        AMateria(std::string const & type);
+        std::string const & getType() const; //Returns the materia type
+        virtual AMateria* clone() const = 0;
+        virtual void use(ICharacter& target);
 };
 
 #endif

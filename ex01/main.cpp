@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:50:03 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 17:45:20 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/07 14:23:22 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int main()
     delete j;
     delete i;
     
-    Animal* animals[5];
+    const int size = 5;
+    Animal* animals[size];
     creatAnimals(animals, 5);
 
     Dog dog;

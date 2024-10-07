@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 18:51:58 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 14:30:42 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/07 15:23:57 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/07 16:22:47 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-#include <iostream>
+#include "ICharacter.hpp"
 #include <string>
 
-class Animal{
+class Character : public ICharacter {
     protected:
-        std::string type;
+        std::string name;
     public:
-        Animal();
-        Animal(const std::string& _type);
-        Animal(const Animal& copy);
-        Animal& operator=(const Animal& rhs);
-        std::string getType() const;
-        virtual void makeSound() const = 0;
-        virtual ~Animal() = 0;
+        Character();
+        Character(const Character& copy);
+        Character& operator=(const Character& rhs);
+        ~Character();  
+        // overriding
+        std::string const & getName() const;
+        void equip(AMateria* m);
+        void unequip(int idx);
+        void use(int idx, ICharacter& target);      
 };
 
 #endif

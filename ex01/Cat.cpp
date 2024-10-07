@@ -6,51 +6,33 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:12:05 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 17:44:02 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/07 14:13:09 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() {
+Cat::Cat(): brain(new Brain()){
     std::cout << "Cat Default Constructor" << std::endl;
     type = "Cat";
-    brain = new Brain();
-    for(int i = 0; i < 100; i++)
-        brain->setIdea(i, "idea" + std::to_string(i + 1));
 }
 
-Cat::Cat(const std::string& _type) : Animal(_type){
+Cat::Cat(const std::string& _type) : Animal(_type), brain(new Brain()){
     std::cout << "Cat " << _type << " Constructor" << std::endl;
     type = _type;
-    brain = new Brain();
-    for(int i = 0; i < 100; i++)
-        brain->setIdea(i, "idea" + std::to_string(i + 1));
 }
 
-Cat::Cat(Brain* _brain) {
-    type = "Cat";
-    brain = new Brain();
-    for (int i = 0; i < 100; i++)
-        brain->setIdea(i, _brain->getIdea(i));
-}
-
-Cat::Cat(const Cat& copy) {
+Cat::Cat(const Cat& copy): Animal(copy), brain(new Brain(*copy.brain)){
     std::cout << "Cat Copy Constructor" << std::endl;
-    (void)copy;
-    brain = new Brain();
-    for (int i = 0; i < 100; i++)
-        brain->setIdea(i, copy.brain->getIdea(i));
 }
 
 Cat& Cat::operator=(const Cat& rhs) {
     std::cout << "Cat Copy Assignement Constructor" << std::endl;
     if (this == &rhs)
         return *this;
+    Animal::operator=(rhs);
     delete brain;
-    brain = new Brain();
-    for (int i = 0; i < 100; i++)
-        brain->setIdea(i, rhs.brain->getIdea(i));
+    brain = new Brain(*rhs.brain);
     return *this;
 }
 
@@ -65,8 +47,4 @@ void Cat::makeSound() const {
 
 std::string Cat::getBrainIdea(int index) {
     return brain->getIdea(index);
-}
-
-void Cat::setBrainIdea(int index, std::string str) {
-    brain->setIdea(index, str);
 }
