@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:50:03 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 14:34:33 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:36:02 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,18 @@ void s() {
 int main()
 {
     const Animal* a[2] = {
-        new Dog(),
-        new Cat()
+        a[0] = new Dog(),
+        a[1] = new Cat()
     };
     std::cout << "\n\n";
     for(int i = 0; i < 2; i++)
         delete a[i];
-    
-    Animal* animals[5];
-    creatAnimals(animals, 5);
+        
+    int nbrAnimals = 5;
+    if (nbrAnimals <= 0)
+        return 1;
+    Animal* animals[nbrAnimals];
+    creatAnimals(animals, nbrAnimals);
 
     Dog dog;
     testCopies(dog);

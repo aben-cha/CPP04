@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:51:46 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 17:38:09 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:34:21 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ Animal::~Animal() {
     std::cout << "Animal Default Destructor" << std::endl;
 }
 
-void Animal::makeSound() const {
-    std::cout << "The animal makes a sound" << std::endl;
-}
+// void Animal::makeSound() const {
+//     std::cout << "The animal makes a sound" << std::endl;
+// }
 
 std::string Animal::getType() const {
      return type;       

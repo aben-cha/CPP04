@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:12:05 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 14:13:09 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:22:06 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ Cat& Cat::operator=(const Cat& rhs) {
     std::cout << "Cat Copy Assignement Constructor" << std::endl;
     if (this == &rhs)
         return *this;
-    Animal::operator=(rhs);
     delete brain;
     brain = new Brain(*rhs.brain);
     return *this;

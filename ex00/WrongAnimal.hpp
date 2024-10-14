@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:58:11 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 14:59:22 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/13 18:30:49 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongAnimal{
         WrongAnimal(const std::string& _type);
         WrongAnimal(const WrongAnimal& copy);
         WrongAnimal& operator=(const WrongAnimal& rhs);
-        virtual ~WrongAnimal();
+        virtual ~WrongAnimal();// should delete it 
         std::string getType() const;
         void makeSound() const;
 };

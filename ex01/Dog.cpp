@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:07:26 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 14:21:03 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:22:00 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Dog& Dog::operator=(const Dog& rhs) {
     std::cout << "Dog Copy Assignement Constructor" << std::endl;
     if (this == &rhs)
         return *this;
-    Animal::operator=(rhs);
     delete brain;
     brain = new Brain(*rhs.brain);
     return *this;
@@ -53,10 +52,12 @@ std::string Dog::getBrainIdea(int index) {
 void creatAnimals(Animal* animals[], int n) {
     std::cout << std::endl
               << "          Creating Animals : " << std::endl;
-    for (int i = 0; i < n / 2; i++)
-        animals[i] = new Dog();
-    for (int i = n / 2; i < n; i++)
-        animals[i] = new Cat();
+    for (int i = 0; i < n; i++) {
+        if (i < (n / 2))
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
+    }
     std::cout << std::endl
               << "          type of each Animal :\n";
     for (int i = 0; i < n; i++)
