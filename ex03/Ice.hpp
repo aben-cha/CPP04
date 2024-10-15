@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:06:51 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 15:54:19 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/14 17:50:22 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/15 17:33:37 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include "AMateria.hpp"
 
-class Ice: public AMateria {
+class Ice : public AMateria {
     public:
-    //    Ice(std::string const & type); 
-       Ice(); 
-       Ice(const Ice& copy); 
-       Ice& operator=(const Ice& rhs); 
-       ~Ice();
-       AMateria* clone() const;
+        Ice();
+        Ice(const Ice& rhs);
+        Ice& operator=(const Ice& copy);
+        ~Ice();
+        AMateria* clone() const;
+        // void use(ICharacter& target);
 };
 
 #endif

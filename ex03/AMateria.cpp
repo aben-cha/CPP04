@@ -5,37 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:45:21 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/07 16:19:45 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/14 17:29:59 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/15 17:33:02 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) : type(type) {
-    std::cout << "AMateria Parametric Contructor" << std::endl;
+
+AMateria::AMateria(std::string const & type): type(type) {
 }
 
 AMateria::AMateria() {
-    std::cout << "AMateria Default Contructor" << std::endl;   
 }
 
-AMateria::AMateria(const AMateria& copy) : type(copy.type) {
-    std::cout << "AMateria Copy Contructor" << std::endl;   
+AMateria::AMateria(const AMateria& copy): type(copy.type) {
 }
 
 AMateria& AMateria::operator=(const AMateria& rhs) {
-    std::cout << "AMateria Copy Assignement Contructor" << std::endl; 
-    if (this == &rhs)
-        return *this;
-    type = rhs.type;
-    return *this;  
+    if (this != &rhs)
+        type = rhs.type;
+    return *this;
 }
 
-AMateria::~AMateria() {
-    std::cout << "AMateria Default Desructor" << std::endl;   
+AMateria::~AMateria() { 
 }
 
 std::string const & AMateria::getType() const {
     return type;
+}
+
+void AMateria::use(ICharacter &target)
+{
+    if (type == "ice")
+        std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;  
+    else if (type == "cure")
+        std::cout << "* heals "<< target.getName() << "’s wounds *" << std::endl; 
 }
