@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:50:22 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/15 17:33:37 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:01:07 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Ice : public AMateria {
         Ice& operator=(const Ice& copy);
         ~Ice();
         AMateria* clone() const;
-        // void use(ICharacter& target);
+        virtual void use(ICharacter& target);
 };
 
 #endif

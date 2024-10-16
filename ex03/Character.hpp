@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:26:48 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/15 16:00:42 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/16 16:01:35 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ class ICharacter
 class Character : public ICharacter {
     private:
         std::string name;
-        AMateria* slot[4];
+        AMateria* inventory[4];
     public:
         Character();
         Character(const std::string& name);
         Character(const Character& rhs);
         Character& operator=(const Character& copy);
-        ~Character();
+        virtual ~Character();
         // interface ICharacter
         std::string const & getName() const;
         void equip(AMateria* m);

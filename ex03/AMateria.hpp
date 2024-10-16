@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:25:24 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/15 17:33:51 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:07:28 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@
 #include <iostream>
 #include "Character.hpp"
 
-class ICharacter;
+class ICharacter; // Forward declaration
+// By using a forward declaration, we're telling the compiler, "Trust me,
+// ICharacter is a class that exists. You'll see its full definition 
+// later when you need it."
 
 class AMateria {
     protected:
         std::string type;
-        // ICharacter* icharacter;
     public:
         AMateria(std::string const & type);
-        // Orthodox Canonical Form
         AMateria();
         AMateria(const AMateria& rhs);
         AMateria& operator=(const AMateria& copy);
