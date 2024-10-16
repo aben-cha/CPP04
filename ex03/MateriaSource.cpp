@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:52:52 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/16 20:09:47 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/10/16 21:57:02 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,16 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& rhs) {
 } 
 
 MateriaSource::~MateriaSource() {
-    for (int i = 0; i < index; ++i) {
-        if (materias[i]) {
-            delete materias[i];
-            materias[i] = NULL;
-        }
+    for (int i = 0; i < 4; i++) {
+        delete materias[i];
+        materias[i] = NULL;
     }
     index = 0;
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
     if (m && index < 4) {
-        materias[index] = m->clone();
+        materias[index] = m;
         ++index;
     }
 }
@@ -73,7 +71,7 @@ void MateriaSource::learnMateria(AMateria* m) {
 AMateria* MateriaSource::createMateria(std::string const & type){
     for (int i = 0; i < index; i++) {
         if (materias[i] && (materias[i]->getType() == type))
-            return materias[i];
+            return materias[i]->clone();
     }
     return 0;
 }
