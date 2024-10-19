@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 17:50:22 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/16 15:01:07 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/19 11:38:43 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/19 12:36:02 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 
 class Ice : public AMateria {
     public:
+        Ice(std::string type);
         Ice();
-        Ice(const Ice& rhs);
-        Ice& operator=(const Ice& copy);
+        Ice(const Ice& copy);
+        Ice& operator=(const Ice& rhs);
         ~Ice();
-        AMateria* clone() const;
+        virtual AMateria* clone() const;
         virtual void use(ICharacter& target);
 };
 

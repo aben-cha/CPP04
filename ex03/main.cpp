@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 17:24:20 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/16 21:44:18 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/19 11:30:43 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/19 14:17:49 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "ICharacter.hpp"
 #include "MateriaSource.hpp"
 
 void l() {
@@ -23,7 +24,6 @@ void l() {
 int main()
 {
     atexit(l);
-    
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
@@ -34,7 +34,6 @@ int main()
     tmp = src->createMateria("ice");
     me->equip(tmp);
     tmp = src->createMateria("cure");
-
     me->equip(tmp);
     
     ICharacter* bob = new Character("bob");
@@ -45,7 +44,7 @@ int main()
     delete bob;
     delete me;
     delete src;
-
     
     return 0;
-}
+} 
+           

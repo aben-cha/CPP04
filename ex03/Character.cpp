@@ -5,44 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 18:26:09 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/16 18:36:25 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/19 11:49:38 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/19 12:35:38 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-
-Character::Character() {
-    for (int i = 0; i < 4; i++)
-        inventory[i] = NULL;
+Character::Character(std::string name) : name(name) {
+    for(int i = 0; i < 4; i++)
+        slot[i] = NULL;
 }
 
-Character::Character(const std::string& name) : name(name){
-    for (int i = 0; i < 4; i++)
-        inventory[i] = NULL;
+Character::Character() {
+    for(int i = 0; i < 4; i++)
+        slot[i] = NULL;
 }
 
 Character::Character(const Character& copy) : name(copy.name) {
-    for (int i = 0; i < 4; i++){
-        if (inventory[i])
-            inventory[i] = copy.inventory[i]->clone();
+    for (int i = 0; i < 4; i++) {
+        if (slot[i])
+            slot[i] = copy.slot[i]->clone();
         else
-            inventory[i] = NULL;
+            slot[i] = NULL;
     }
 }
 
 Character& Character::operator=(const Character& rhs) {
-    if (this != &rhs)
-    {
+    if (this != &rhs) {
         name = rhs.name;
         for (int i = 0; i < 4; i++) {
-            delete inventory[i];
-            inventory[i] = NULL;
-            if (inventory[i])
-                inventory[i] = rhs.inventory[i]->clone();
+            delete slot[i];
+            slot[i] = NULL;
+            if (slot[i])
+                slot[i] = rhs.slot[i]->clone();
             else
-                inventory[i] = NULL;
+                slot[i] = NULL;
         }
     }
     return *this;
@@ -50,9 +48,9 @@ Character& Character::operator=(const Character& rhs) {
 
 Character::~Character() {
     for (int i = 0; i < 4; i++) {
-        if (inventory[i]) {
-            delete inventory[i];
-            inventory[i] = NULL;
+        if (slot[i]) {
+            delete slot[i];
+            slot[i] = NULL;
         }
     }
 }
@@ -64,20 +62,21 @@ std::string const & Character::getName() const {
 void Character::equip(AMateria* m) {
     if (!m)
         return ;
-    for (int i = 0; i < 4; i++){
-        if (!inventory[i]) {
-            this->inventory[i] = m; 
+    for (int i = 0; i < 4; i++) {
+        if (!slot[i]) {
+            slot[i] = m;
             return ;
         }
-    } 
+    }
 }
 
 void Character::unequip(int idx) {
-    if ((idx >= 0 && idx < 4) && inventory[idx])
-            inventory[idx] = NULL;
+    if ((idx >= 0 && idx < 4) && slot[idx])
+        slot[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target) {
-    if (idx >= 0 && idx < 4 && inventory[idx])
-            inventory[idx]->use(target);
-} 
+    if ((idx >= 0 && idx < 4) && slot[idx]) {
+        slot[idx]->use(target);
+    }
+}

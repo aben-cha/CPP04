@@ -5,39 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 15:49:23 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/16 20:06:28 by aben-cha         ###   ########.fr       */
+/*   Created: 2024/10/19 12:15:21 by aben-cha          #+#    #+#             */
+/*   Updated: 2024/10/19 12:23:58 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIALSOURCE_HPP
-#define MATERIALSOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "AMateria.hpp"
-// class AMateria;
+#include "IMateriaSource.hpp"
 
-class IMateriaSource
-{
-    public:
-        IMateriaSource();  
-        IMateriaSource(const IMateriaSource& copy);  
-        IMateriaSource& operator=(const IMateriaSource& rhs);  
-        virtual ~IMateriaSource() {}
-        virtual void learnMateria(AMateria*) = 0;
-        virtual AMateria* createMateria(std::string const & type) = 0;
-};
-
-class MateriaSource : public IMateriaSource{
+class MateriaSource : public  IMateriaSource{
     private:
-        AMateria* materias[4];
+        AMateria* templates[4];
         int index;
     public:
-        MateriaSource();  
-        MateriaSource(const MateriaSource& copy);  
-        MateriaSource& operator=(const MateriaSource& rhs);  
+        MateriaSource();
         ~MateriaSource();
-        void learnMateria(AMateria*);
-        AMateria* createMateria(std::string const & type);
+        MateriaSource(const MateriaSource& copy);
+        MateriaSource& operator = (const MateriaSource& rhs);
+        virtual void learnMateria(AMateria*);
+        virtual AMateria* createMateria(std::string const & type);
 };
 
-#endif
+#endif 
