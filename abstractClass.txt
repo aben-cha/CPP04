@@ -1,3 +1,7 @@
+* Return by reference: Returning *this allows assignment 
+  chaining like a = b = c.
+
+
 =========================(Abstract class)===========================
 * you cannot create an instance of an abstract class base class, 
   but you can create other classes that are derived from it 
