@@ -1,9 +1,10 @@
 NAME= interface
 CPP= c++
-CFLAGS= -Wall -Wextra -Werror -std=c++98
+CFLAGS= -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 SRC= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJ= $(SRC:%.cpp=%.o)
 
+	
 all: $(NAME)
 
 $(NAME): $(OBJ)

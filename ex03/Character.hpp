@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:50:19 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/11/07 19:44:10 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 20:55:17 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Character : public ICharacter {
     private:
         std::string name;
         AMateria* slot[4];
+        AMateria* saveaddress[4];
     public:
         Character();
         Character(std::string name);

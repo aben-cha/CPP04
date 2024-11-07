@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:30:43 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/11/07 19:44:15 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 22:48:11 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
     me->use(0, *bob);
     me->unequip(0);
     me->use(1, *bob);
-    me->unequip(1);
+    // me->unequip(1);
 
     
     delete bob;
