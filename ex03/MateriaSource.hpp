@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 12:15:21 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/19 12:23:58 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:28:39 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class MateriaSource : public  IMateriaSource{
         ~MateriaSource();
         MateriaSource(const MateriaSource& copy);
         MateriaSource& operator = (const MateriaSource& rhs);
-        virtual void learnMateria(AMateria*);
-        virtual AMateria* createMateria(std::string const & type);
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
 };
 
 #endif 

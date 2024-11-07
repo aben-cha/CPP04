@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:51:46 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 14:59:54 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:03:24 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ Animal::Animal() {
     std::cout << "Animal Default Constructor" << std::endl;
 }
 
-Animal::Animal(const std::string& _type) : type(_type){
+Animal::Animal(const std::string& _type){
+    type = _type;
     std::cout << "Animal " << _type << " Constructor" << std::endl;
 }
 

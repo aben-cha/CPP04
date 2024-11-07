@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:50:03 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/14 16:36:02 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:06:49 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
-
-// delete it 
-void s() {
-    system("leaks abstract");
-}
 
 int main()
 {

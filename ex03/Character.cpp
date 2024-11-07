@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:49:38 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/19 12:35:38 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:49:19 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Character::Character(std::string name) : name(name) {
         slot[i] = NULL;
 }
 
-Character::Character() {
+Character::Character() : name("default") {
     for(int i = 0; i < 4; i++)
         slot[i] = NULL;
 }
@@ -35,10 +35,11 @@ Character& Character::operator=(const Character& rhs) {
     if (this != &rhs) {
         name = rhs.name;
         for (int i = 0; i < 4; i++) {
-            delete slot[i];
-            slot[i] = NULL;
-            if (slot[i])
+            if (slot[i]) {
+                delete slot[i];
+                slot[i] = NULL;
                 slot[i] = rhs.slot[i]->clone();
+            }
             else
                 slot[i] = NULL;
         }

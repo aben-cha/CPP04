@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:51:58 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/06 16:09:56 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:09:50 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal{
         Animal(const std::string& _type);
         Animal(const Animal& copy);
         Animal& operator=(const Animal& rhs);
-        virtual ~Animal(); // until ex01
+        virtual ~Animal();
         std::string getType() const;
         virtual void makeSound() const;
 };

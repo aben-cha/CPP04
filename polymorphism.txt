@@ -15,7 +15,7 @@
   in our programme 
 
 * there are two types of Polymorphism : 
-  1 - compilation time Polymorphism : statis binding
+  1 - compilation time Polymorphism : static binding
       a - function overloading
       b - operator overloading
   2 - Runctime Polymorphism : dynamic binding
@@ -28,7 +28,7 @@
   2 - static binding = overloading = redefining  ==> happening during the compile time 
       ==> happens by default 
 ======> How Dynamic Binding Works in C++
-* you must declare a function as virtual in the bse class
+* you must declare a function as virtual in the base class
 * A base class pointer or reference nust be used to call the function
 * Ar runtime c++ determines the actual object type (derived class) and  
   calls the appropriate overrideen function.

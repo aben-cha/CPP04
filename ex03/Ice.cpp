@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:41:54 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/19 12:36:30 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:25:32 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 Ice::Ice(std::string type) : AMateria(type){
 }
 
-Ice::Ice(){
-    type = "ice";
+Ice::Ice() : AMateria("ice"){
 }
 
 

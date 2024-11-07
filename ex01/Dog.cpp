@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:07:26 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/14 16:22:00 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:54:50 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,6 @@ void testCopies(const Dog& dog) {
     Dog dog2;
 
     dog2 = dog;
-    for (int i = 0;i < 10; i++)
+    for (int i = 0; i < 10; i++)
         std::cout << dog2.getBrainIdea(i) << std::endl;
 }

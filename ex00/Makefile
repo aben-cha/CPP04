@@ -1,6 +1,6 @@
 NAME= polymorphism
 CPP= c++
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ= $(SRC:%.cpp=%.o)
 

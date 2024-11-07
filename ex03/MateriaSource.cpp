@@ -6,7 +6,7 @@
 /*   By: aben-cha <aben-cha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 12:19:23 by aben-cha          #+#    #+#             */
-/*   Updated: 2024/10/19 12:37:18 by aben-cha         ###   ########.fr       */
+/*   Updated: 2024/11/07 16:50:41 by aben-cha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ MateriaSource::MateriaSource() : index(0) {
 }
 
 MateriaSource::~MateriaSource() {
-    for (int i = 0; i < 4; i++) { 
-        delete templates[i];   
-        templates[i] = NULL;
+    for (int i = 0; i < 4; i++) {
+        if (templates[i]) {
+            delete templates[i];   
+            templates[i] = NULL;
+        } 
     }
 }
 
@@ -37,8 +39,11 @@ MateriaSource::MateriaSource(const MateriaSource& copy) {
 MateriaSource& MateriaSource::operator=(const MateriaSource& rhs) {
     if (this != &rhs) {
         for (int i = 0; i < 4; i++) {
-            if (templates[i])
+            if (templates[i]) {
+                delete templates[i];
+                templates[i] = NULL;
                 templates[i] = rhs.templates[i]->clone();
+            }
             else 
                 templates[i] = NULL;
         }
